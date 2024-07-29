@@ -34,10 +34,12 @@
 // console.log(a);
 
 
-// a = 5;
-// function variable(){
-//     console.log(a);
-// }
-// variable()
-// console.log(a);
+a = 5;
+function variable(){
+    let a =15;
+    let b =5;
+    console.log(a);
+}
+variable()
+console.log(a);
 
