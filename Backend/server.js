@@ -12,7 +12,7 @@ app.use(express.static(path.resolve(__dirname,'./public')))
 
 
 
-// localhost : 8080
+// localhost : 8000
 const data = [
     {
         name:"a",
@@ -37,13 +37,22 @@ const data = [
 ]
 
 app.get('/',(req,res)=>{
-    res.send("<h1>Webpage title auto reload</h1>")
+    res.send("<h1>Hello world written on root</h1>")
     console.log("changed console message")
 });
 
 app.get('/users',(req,res)=>{
     res.send(data);
     console.log("changed console message")
+});
+
+app.get('/home',(req,res)=>{
+    res.sendFile(path.resolve(__dirname,"./public","page.html"));
+});
+
+app.get('/stopwatch',(req,res)=>{
+    res.sendFile(path.resolve(__dirname,"./public","stopwatch.html"));
+    console.log("stopwatch page opened")
 });
 
 // app.get('/users/greaterthan3',(req,res)=>{
@@ -55,5 +64,5 @@ app.get('/users',(req,res)=>{
 
 
 app.listen(PORT,()=>{
-    console.log("Server is running on localhost".bgBlue.black)
+    console.log(`Server is running on https://localhost:${PORT}`.bgBlue.black)
 })
