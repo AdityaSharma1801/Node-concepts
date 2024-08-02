@@ -3,6 +3,7 @@ const colors = require("colors")
 const dotenv = require("dotenv").config()
 const morgan = require("morgan")
 const path = require("path");
+const products=require("./utility/productdata.json");
 
 const app = express();
 const PORT = 8000;
@@ -45,6 +46,12 @@ app.get('/users',(req,res)=>{
     res.send(data);
     console.log("changed console message")
 });
+// app.get('/users/greaterthan3',(req,res)=>{
+//     const greaterthan3 = data.filter((users)=>
+//     users.age>3);
+//     res.send(greaterthan3);
+//     console.log("changed console message")
+// });
 
 app.get('/home',(req,res)=>{
     res.sendFile(path.resolve(__dirname,"./public","page.html"));
@@ -55,12 +62,10 @@ app.get('/stopwatch',(req,res)=>{
     console.log("stopwatch page opened")
 });
 
-// app.get('/users/greaterthan3',(req,res)=>{
-//     const greaterthan3 = data.filter((users)=>
-//     users.age>3);
-//     res.send(greaterthan3);
-//     console.log("changed console message")
-// });
+app.get('/products',(req,res)=>{
+    res.send(products)
+});
+
 
 
 app.listen(PORT,()=>{
