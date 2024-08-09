@@ -1,25 +1,21 @@
 import React from 'react'
-import "./App.css"
+import WeatherCard from "./components/WeatherCard"
 const App = () => {
   return (
-<main className="main">
-  <div className="left">
-    <div className="date">
-      Friday, 9 August 2024    </div>
-    <div className="city">
-      Agra
-    </div>
-    <div className="tempreture">
-      <img src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png" alt="icon" className="left-img" />
-      27°
-    </div>
-  </div>
-  <div className="right">
-    <div className="city-img">
-      <img src="https://e1.pxfuel.com/desktop-wallpaper/124/761/desktop-wallpaper-taj-mahal-agra-india-taj-mahal-at-night-3d-thumbnail.jpg" alt="tajmahal" className="right-img" />
-    </div>
-  </div>
-</main>
+<>
+<WeatherCard
+data ="40" 
+pic="https://media.istockphoto.com/id/510978989/photo/hawa-mahal-palace-in-jaipur-rajasthan.jpg?s=612x612&w=0&k=20&c=-2ijZ9kpofMH1jJhaxFF1hJ5oqjdXfOtIu0BlwXwdls="
+Location={"Jaipur"}
+/>
+
+<WeatherCard 
+data = "30" 
+pic="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJoHP_uzR2BMYxEy6Rgr4RBgJ2m48SaChhkA&s"
+Location={"Agra"}
+/>
+</>
+
 
   )
 }
